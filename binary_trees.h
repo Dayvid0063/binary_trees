@@ -29,6 +29,7 @@ typedef struct binary_tree_s heap_t;
 
 /* Custom Prototype */
 void binary_tree_print(const binary_tree_t *tree);
+size_t custom_height(const binary_tree_t *tree);
 
 /* Prototypes */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);

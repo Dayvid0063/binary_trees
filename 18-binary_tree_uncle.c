@@ -12,9 +12,12 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 	if (!node || !node->parent || !node->parent->parent)
 		return (NULL);
 
-	/* Get a ptr to the grandparent of the node */
-	binary_tree_t *grandparent = node->parent->parent;
+	/* If node parent is the left/right child of its grandparent */
+	if (node->parent == node->parent->parent->left)
+		return (node->parent->parent->right);
 
-	return (grandparent->left == node->parent ?
-			grandparent->right : grandparent->left);
+	if (node->parent == node->parent->parent->right)
+		return (node->parent->parent->left);
+
+	return (NULL);
 }

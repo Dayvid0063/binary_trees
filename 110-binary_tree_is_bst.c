@@ -28,5 +28,7 @@ int is_valid(const binary_tree_t *tree, int low, int top)
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
+	if (!tree)
+		return (0);
 	return (is_valid(tree, INT_MIN, INT_MAX));
 }
